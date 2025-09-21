@@ -10,7 +10,7 @@ public class Conversion {
         System.out.print("||          Please input PHP amount: ");
         double php = input.nextDouble();
         System.out.println("||                                              ||");
-        System.out.print("||==============================================||\n");
+        System.out.println("||==============================================||\n");
 
         //Conversion
         double usdRate = 43.33089;   // 1USD = 43.33089 PHP
@@ -39,19 +39,23 @@ public class Conversion {
         boolean logicTest = (eur > 0) && (cny > 0);
 
         //Printing Results
-        System.out.println("\nThe amount's equivalent to:");
-        System.out.println("US Dollar : " + String.format("%.3f", usd));
-        System.out.println("Euro      : " + String.format("%.6f", eur));
-        System.out.println("Yuan      : " + String.format("%.6f", cny));
-        System.out.println("Koruna    : " + String.format("%.6f", czk));
-        System.out.println("Krone     : " + String.format("%.6f", nok));
-        System.out.println("Sheqel    : " + String.format("%.6f", ils));
-        System.out.println("Dinar     : " + String.format("%.6f", kwd));
+        System.out.print("||==============================================||\n");
+        System.out.println("||          The amount's equivalent to:         ||");
+        System.out.println("||US Dollar : " + String.format("%.3f", usd));
+        System.out.println("||Euro      : " + String.format("%.6f", eur));
+        System.out.println("||Yuan      : " + String.format("%.6f", cny));
+        System.out.println("||Koruna    : " + String.format("%.6f", czk));
+        System.out.println("||Krone     : " + String.format("%.6f", nok));
+        System.out.println("||Sheqel    : " + String.format("%.6f", ils));
+        System.out.println("||Dinar     : " + String.format("%.6f", kwd));
 
+        System.out.print("||==============================================||\n");
 
+        
         // Show relational & logical examples
-        System.out.println("\nExtra checks:");
-        System.out.println("Is the amount exactly 1 USD? " + isOneDollar);
-        System.out.println("Are Euro and Yuan both greater than 0? " + logicTest);
+        System.out.println("||                  Extra checks:               ||");
+        System.out.println("||       Is the amount exactly 1 USD? " + isOneDollar + "     ||");
+        System.out.println("||  Are Euro and Yuan both greater than 0? " + logicTest + " ||");
+        System.out.print("||==============================================||\n");
     }
-}  
+}
