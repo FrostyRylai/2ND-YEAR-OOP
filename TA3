@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+
+public class Conversion {
+    public static void main (String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("||==============================================||\n");
+        System.out.println("||          Welcome to PHP conversion!          ||");
+        System.out.print("||==============================================||\n");
+        System.out.print("||          Please input PHP amount: ");
+        double php = input.nextDouble();
+        System.out.println("||                                              ||");
+        System.out.print("||==============================================||\n");
+
+        //Conversion
+        double usdRate = 43.33089;   // 1USD = 43.33089 PHP
+        double euro = 0.734719;     
+        double yuan = 6.346934;
+        double koruna = 18.77263;
+        double krone = 5.449007;
+        double sheqel = 3.726334;
+        double dinar = 0.274588;
+
+        //Conversion of PHP to USD
+        double usd = php / usdRate;
+    
+        //Conversion of other currencies
+        double eur = usd * euro;
+        double cny = usd * yuan;
+        double czk = usd * koruna;
+        double nok = usd * krone;
+        double ils = usd * sheqel;
+        double kwd = usd * dinar;
+
+        // Relational operator (==) (check if the USD is exactly 1)
+        boolean isOneDollar = usd == 1.0;
+
+        // Logical operator (&&)
+        boolean logicTest = (eur > 0) && (cny > 0);
+
+        //Printing Results
+        System.out.println("\nThe amount's equivalent to:");
+        System.out.println("US Dollar : " + String.format("%.3f", usd));
+        System.out.println("Euro      : " + String.format("%.6f", eur));
+        System.out.println("Yuan      : " + String.format("%.6f", cny));
+        System.out.println("Koruna    : " + String.format("%.6f", czk));
+        System.out.println("Krone     : " + String.format("%.6f", nok));
+        System.out.println("Sheqel    : " + String.format("%.6f", ils));
+        System.out.println("Dinar     : " + String.format("%.6f", kwd));
+
+
+        // Show relational & logical examples
+        System.out.println("\nExtra checks:");
+        System.out.println("Is the amount exactly 1 USD? " + isOneDollar);
+        System.out.println("Are Euro and Yuan both greater than 0? " + logicTest);
+    }
+}  
