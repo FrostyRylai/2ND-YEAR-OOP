@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class Bank {
+    public static void main (String[] args) {
+    Scanner input = new Scanner(System.in);
+    char repeat;
+
+    do {
+        System.out.println("||=============================================||");
+        System.out.println("||       Welcome to Interest Calculator!!      ||");
+        System.out.println("||=============================================||");
+
+        System.out.print("||Enter initial balance: ");
+        double balance = input.nextDouble();
+
+        System.out.print("||Enter Annual interest rate (example: 10 for 10%): ");
+        double ratePercent = input.nextDouble();
+
+        //Rate Conversion
+        double rate = ratePercent/100.0;
+
+        //Copy of balance for each method
+        double annualBalance = balance;
+        double monthlyBalance = balance;
+        double dailyBalance = balance;
+
+        // Compunded Anually
+        for (int year=1; year <=10; year++) {
+            annualBalance += annualBalance * rate;
+        }
+
+        // Compounded Monthly 
+        for (int month=1; month <=10 * 12; month++) {
+            monthlyBalance += monthlyBalance * (rate/ 12.0);
+        }
+
+        // Compounded daily
+        for (int day=1; day <= 10 * 365; day++) {
+            dailyBalance += dailyBalance * (rate / 365.0);
+        }
+
+        // Output 
+        System.out.println("||=============================================||");
+        System.out.println("||             After 10 years:                 ||");
+        System.out.printf("||       Compounded Annually: %.2f%n", annualBalance);
+        System.out.printf("||       Compounded Monthly : %.2f%n", monthlyBalance);
+        System.out.printf("||       Compounded Daily   : %.2f%n", dailyBalance);
+        System.out.println("||=============================================||");
+        //Confirmation
+        System.out.print("||Do you want to calculate again? (Y/N): ");
+        repeat = input.next().charAt(0);
+
+
+    }while (repeat == 'Y' || repeat == 'y');
+    
+    System.out.println("Thank you for using Interest Calculator");
+    input.close();
+    }
+}
